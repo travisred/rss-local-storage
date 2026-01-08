@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Feeds - RSS Reader</title>
+    <style>
+        html {
+            font-size: 20px;
+            width: 100%;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+        
+        body {
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .header {
+            margin-bottom: 20px;
+        }
+        
+        .nav-links {
+            margin: 20px 0;
+        }
+        
+        .nav-links a {
+            margin-right: 10px;
+            color: #0066cc;
+            text-decoration: none;
+        }
+        
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .search-form {
+            margin: 20px 0;
+        }
+        
+        .site-header {
+            margin-top: 30px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .site-header a {
+            color: #333;
+            text-decoration: none;
+        }
+        
+        .item {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+        
+        .item a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        
+        .mark-read {
+            color: #666;
+            font-size: 0.9em;
+            cursor: pointer;
+        }
+        
+        .toggle-star {
+            cursor: pointer;
+            font-size: 1.2em;
+            text-decoration: none !important;
+        }
+        
+        .progress {
+            margin: 20px 0;
+            padding: 10px;
+            background: #f0f0f0;
+            border-radius: 5px;
+        }
+        
+        @media only screen and (max-width: 1000px) {
+            html {
+                font-size: 18px;
+                width: 100%;
+            }
+            
+            body {
+                padding: 10px;
+            }
+            
+            .item {
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+                white-space: normal;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 id="page-title">Manage Feeds</h1>
+    
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="#" id="link-export">Export Data</a>
+        <a href="#" id="link-import">Import Data</a>
+    </div>
+    
+    <input type="file" id="import-file" accept=".json" style="display: none;" />
+    
+    <div id="message"></div>
+    
+    <div class="form-section">
+        <h2 id="form-title">Add New Feed</h2>
+        <form id="feed-form">
+            <input type="hidden" id="edit-id" value="">
+            
+            <div class="form-group">
+                <label for="feed-title">Feed Title:</label>
+                <input type="text" id="feed-title" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="feed-url">Feed URL:</label>
+                <input type="url" id="feed-url" required>
+            </div>
+            
+            <div class="form-group" id="active-group" style="display: none;">
+                <label>
+                    <input type="checkbox" id="feed-active">
+                    <span class="checkbox-label">Active</span>
+                </label>
+            </div>
+            
+            <button type="submit" id="submit-btn">Add Feed</button>
+            <button type="button" class="cancel" id="cancel-btn" style="display: none;">Cancel</button>
+        </form>
+    </div>
+    
+    <h2>Existing Feeds</h2>
+    
+    <div id="feeds">
+        <div>
+            <p>Loading...</p>
+        </div>
+    </div>
+    
+    <script type="module" src="./dist/feeds.js"></script>
+</body>
+</html>

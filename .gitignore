@@ -1,0 +1,5 @@
+node_modules/
+dist/
+*.log
+deploy.txt
+.DS_Store

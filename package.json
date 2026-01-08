@@ -1,0 +1,17 @@
+{
+  "name": "rss-reader",
+  "version": "1.0.0",
+  "description": "TypeScript RSS Reader with localStorage",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "serve": "npx http-server -p 8080 -o"
+  },
+  "keywords": ["rss", "reader", "typescript", "localstorage"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}
