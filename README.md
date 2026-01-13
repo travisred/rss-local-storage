@@ -1,3 +1,5 @@
+![rss-local-storage](https://raw.github.com/travisred/rss-local-storage/master/screenshot.jpg)
+
 # RSS Reader with Local Storage
 
 A simple RSS feed reader built with TypeScript that uses browser localStorage for data persistence. This can be hosted on a static HTML host.
